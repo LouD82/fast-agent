@@ -14,8 +14,32 @@ from typing import (
 
 from pydantic import BaseModel, ConfigDict, Field
 
-EventType = Literal["debug", "info", "warning", "error", "progress"]
-"""Broad categories for events (severity or role)."""
+from enum import Enum, auto
+
+
+class EventType(Enum):
+    """Event types for the logging system."""
+    
+    # Agent lifecycle events
+    AGENT_START = "agent_start"
+    AGENT_COMPLETE = "agent_complete"
+    
+    # Tool events
+    TOOL_CALL = "tool_call"
+    TOOL_RESULT = "tool_result"
+    
+    # Message events
+    USER_MESSAGE = "user_message"
+    ASSISTANT_MESSAGE = "assistant_message"
+    
+    # Thinking/reasoning events
+    THINKING = "thinking"
+    
+    # Error events
+    ERROR = "error"
+    
+    # Status events
+    STATUS_UPDATE = "status_update"
 
 
 class EventContext(BaseModel):

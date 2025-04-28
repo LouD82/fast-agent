@@ -401,6 +401,31 @@ mcp:
 
 ![fast-agent](https://github.com/user-attachments/assets/3e692103-bf97-489a-b519-2d0fee036369)
 
+## Graphical User Interface
+
+Fast-agent now includes a graphical user interface that makes it easy to interact with agents without using the command line. To start the GUI, run:
+
+```bash
+fast-agent gui
+```
+
+Or you can run the script directly:
+
+```bash
+python scripts/run_gui.py
+```
+
+The GUI provides the following features:
+- Select from available models
+- Send prompts to agents
+- View agent responses in a chat-like interface
+- Toggle display of tool calls and thinking
+- Clear conversation history
+
+### GUI Screenshots
+
+![Fast-Agent GUI](https://github.com/user-attachments/assets/8f6dbb69-43e3-4633-8e12-5572e9614728)
+
 ## Project Notes
 
 `fast-agent` builds on the [`mcp-agent`](https://github.com/lastmile-ai/mcp-agent) project by Sarmad Qadri.

@@ -4,7 +4,7 @@ import typer
 from rich.console import Console
 from rich.table import Table
 
-from mcp_agent.cli.commands import check_config, go, quickstart, setup
+from mcp_agent.cli.commands import check_config, go, gui, quickstart, setup
 from mcp_agent.cli.terminal import Application
 
 app = typer.Typer(
@@ -18,6 +18,7 @@ app.add_typer(setup.app, name="setup", help="Set up a new agent project")
 app.add_typer(check_config.app, name="check", help="Show or diagnose fast-agent configuration")
 app.add_typer(quickstart.app, name="bootstrap", help="Create example applications")
 app.add_typer(quickstart.app, name="quickstart", help="Create example applications")
+app.add_typer(gui.app, name="gui", help="Launch the graphical user interface")
 
 # Shared application context
 application = Application()
@@ -44,6 +45,7 @@ def show_welcome() -> None:
     table.add_row("setup", "Create a new agent template and configuration files")
     table.add_row("check", "Show or diagnose fast-agent configuration")
     table.add_row("quickstart", "Create example applications (workflow, researcher, etc.)")
+    table.add_row("gui", "Launch the graphical user interface")
 
     console.print(table)
 
